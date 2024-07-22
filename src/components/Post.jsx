@@ -1,18 +1,10 @@
-const names = ["Maxmi", "Sarah"];
-const posts = ["React is Awesome!", "Enjoyed Learning React!"];
-let randNumber = 0;
-let chosenPost = "";
-let chosenName = "";
-
-const Post = () => {
-  randNumber = Math.random();
-  chosenName = randNumber > 0.5 ? names[0] : names[1];
-  chosenPost = randNumber > 0.5 ? posts[0] : posts[1];
+import styles from "../CSS/Post.module.css";
+const Post = (props) => {
   return (
-    <>
-      <p>{chosenName}</p>
-      <p>{chosenPost}</p>
-    </>
+    <li className={styles.post}>
+      <p className={styles.author}>{props.author}</p>
+      <p className={styles.text}>{props.body}</p>
+    </li>
   );
 };
 
